@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.post("/api", async (req, res) => {
   const configuration = new Configuration({
-    apiKey: req.body.apiKey,
+    apiKey: process.env.OPENAI_API_KEY,
   });
   const openai = new OpenAIApi(configuration);
 
